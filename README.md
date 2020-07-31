@@ -18,6 +18,8 @@ Chromedriver.exe
 
 Link to download chrome driver : https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/
 
+Or you can download from repo.
+
 
 ###################################################################################################
 
