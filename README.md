@@ -16,7 +16,7 @@ Install these libraries :
 Software needed :
 Chromedriver.exe 
 
-Link to download chrome driver : https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/
+Link to download chrome driver : https://chromedriver.storage.googleapis.com/index.html?path=94.0.4606.61/
 
 Or you can download from repo.
 
