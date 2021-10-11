@@ -32,11 +32,11 @@ def getSGPA(roll,str_ing,sems):
         name = driver.find_element_by_id('lblname').text
         return [obtmrk,obtmark2,obtmark3,name]
     except:
-        print("RESULT OF", roll, "FOR SEM-",sems,'not available')
+        print("RESULT OF", roll, "FOR SEM:",end='')
+        print(sems,'not available')
         return ["NA", "NA"]
 
 
-##################################### MAIN FUNCTION BEGINS HERE ###############################
 while(True):
     print("ENTER YOUR BRANCH CODE- ")
     print("CE:1   CS:2   EE:3   EL:4  ME:5   IT:6")
@@ -93,7 +93,7 @@ roll_list = []
 
 ######### ROLL NO LIST GENERATION ###########
 regular_start = start_year*1000 + branch_code * 100 + 1
-regular_end = start_year*1000 + branch_code * 100 + 75
+regular_end = start_year*1000 + branch_code * 100 + 72
 lateral_start = (start_year+1)*10000 + (start_year%10)*1000 + branch_code * 100 + 1
 lateral_end = (start_year+1)*10000 + (start_year%10)*1000 + branch_code * 100 + 8
 regular = [y for y in range(regular_start, regular_end)]
@@ -126,5 +126,6 @@ nan_value = float("NaN")
 df.replace(-1, nan_value, inplace=True)
 df.dropna(how='all', axis=1, inplace=True)
 file_name = 'Result_' + str(branch_to_code[branch_code]) + "_" + year + "_"+"Sem."+semester[sem]+ '.csv'
-df.to_csv(file_name, index=False)
+rslt_df = df.sort_values(by = 'CGPA', ascending = False)
+rslt_df.to_csv(file_name, index=False)
 print("DONE")
